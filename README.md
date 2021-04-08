@@ -3,11 +3,17 @@ Sparse Short Time Fourier Transform (SparseSTFT)
 
 The algorithm is based on the constant window function and optimization in the time-domain with two examples.
 
+# Example 
+The figure shows the result of **Demo2.py** code.<\br>
+The top subplot shows the ground motion recorded by Kik-Net stations in Japan. <\br>
+The middle subplot is the **TF Representation** of seismogram.<\br>
+The bottom subplot is the reisudal between observed and reconstructed data.<\br>
 
 ![alt text](https://github.com/resfahani/SparseSTFT/blob/master/Figures/Demo2.png)
 
+Tale a look at the result of second example ([link](https://github.com/resfahani/SparseSTFT/blob/master/Figures/Demo1.png))
 
-Please cite to:
+#Citation
 
 D. D. Esfahani, Reza & Askari, Radwin & Gholami, Ali. (2018). Sparsity promoting method to estimate the dispersion curve of surface wave group velocity. GEOPHYSICS. 84. 1-40. 10.1190/geo2018-0138.1. 
 
