@@ -37,7 +37,7 @@ cgIter = 1
 epsilon = 1e-3
 
 #Window length
-nw = 70
+nw = 65
 
 
 
@@ -75,7 +75,7 @@ yrec  = np.real(np.sum(W * ifft(f, axis=0) , keepdims=True, axis=1))
 
 #%%
 
-fig, (ax,ax1,ax2) = plt.subplots(3,1,figsize=(8,8))
+fig, (ax,ax1,ax2) = plt.subplots(3,1,figsize=(7,8))
 t = np.arange(n) * dt
 
 
@@ -101,5 +101,5 @@ ax2.set_title('Residual',fontsize= 16)
 ax2.set_xlabel('Time (s)',fontsize= 16)
 ax2.set_xlim(t[0], t[-1])
 
-fig.savefig("Demo2.png", dpi=100)
+fig.savefig("Demo2.png", dpi=200)
 

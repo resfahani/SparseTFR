@@ -63,8 +63,10 @@ f,u = sparseTF(y, W, epsilon,  gamma, verbose = True, cgIter = cgIter)
 yrec  = np.real(np.sum(W * ifft(f, axis=0) , keepdims=True, axis=1))
 
 #%%
-fig, (ax,ax1,ax2) = plt.subplots(3,1,figsize=(8,10))
+fig, (ax,ax1,ax2) = plt.subplots(3,1,figsize=(7,8))
+
 t = np.arange(n)
+
 
 fmin = 0
 nyqn = n//2
