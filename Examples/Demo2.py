@@ -50,6 +50,7 @@ data  = op.read(addr)
 data.detrend('linear')
 data.resample(50)
 
+# Calibration
 y = data[0].data[600:1700, np.newaxis] * data[0].stats.calib
 dt = data[0].stats.delta
 
@@ -82,6 +83,7 @@ t = np.arange(n) * dt
 fmin = 0
 fnyq = 1/dt/2
 nyqn = n//2
+
 ax.plot(t, y,'k', lw = 1)
 ax.set_title('Signal', fontsize= 16)
 ax.set_xticks([])

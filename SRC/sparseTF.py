@@ -36,14 +36,14 @@ def sparseTF(y, W, epsilon, gamma, verbose = True, cgIter = 1):
     lam = 0.25
     
     weight = max(abs(y[:]))
-    y = y[:]/ weight
+    y = y[:] / weight
     n = len(y)
-    B = lambda X: mu * W * np.tile(np.sum(W * X, axis = 1, keepdims=True), n) + (lam + gamma) * X
+    B = lambda X : mu * W * np.tile(np.sum(W * X, axis = 1, keepdims = True), n) + (lam + gamma) * X
     
     
-    p = np.zeros([n,n])
+    p = np.zeros([n, n])
     q = np.zeros(p.shape)
-    yk =np.zeros(y.shape)
+    yk = np.zeros(y.shape)
     k = 1
     
 #-------------------------------------------------------------------------
@@ -52,26 +52,28 @@ def sparseTF(y, W, epsilon, gamma, verbose = True, cgIter = 1):
 
     while 1:
     
-        rhs = mu * W * np.tile(yk, n) +  lam * ifft(p - 2 * q, axis=0)
+        rhs = mu * W * np.tile(yk, n) +  lam * ifft(p - 2 * q, axis = 0)
         u   = CG(B, rhs, 1e-4, cgIter)
-        p = fft(u, axis= 0 ) + q
-        q = clip(p, 1/lam)
-        dy = y - (np.sum(W * u , keepdims=True, axis=1))
-        yk = yk + dy
+        p   = fft(u, axis = 0 ) + q
+        q   = clip(p, 1/lam)
+        dy  = y - (np.sum(W * u , keepdims = True, axis = 1))
+        yk  = yk + dy
         res = np.real(np.conj(dy.T) @ dy)
+        
         if verbose:
-            print("Iteration = " + str(k) + ", residual = " + str(np.round(res.item(),4)) + " ("+str(epsilon)+")")
+            
+            print("Iteration = " + str(k) + ", residual = " + str(np.round(res.item(), 4)) + " ("+str(epsilon) + ")" )
     
-        k = k+1
+        k  = k + 1
     
-        if res< epsilon:
+        if res < epsilon:
+    
             break
     
     ap = abs(p).copy()
-    b = ap - 1/lam
-    f = p * ((b + abs(b)) /ap/2)
-    
-    f = weight * f
+    b  = ap - 1/lam
+    f  = p * ((b + abs(b)) /ap/2)
+    f  = weight * f
     
     
     return f, u
@@ -79,7 +81,7 @@ def sparseTF(y, W, epsilon, gamma, verbose = True, cgIter = 1):
 
 def clip(p, tau):
     p2 = np.real(p * np.conj(p))
-    indx = p2> tau**2
+    indx = p2 > tau**2
     q = p.copy()
     q[indx] = tau * (p[indx] / np.sqrt(p2[indx]))
     return q

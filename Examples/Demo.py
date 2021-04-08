@@ -70,6 +70,7 @@ t = np.arange(n)
 
 fmin = 0
 nyqn = n//2
+
 ax.plot(t, y,'k', lw = 1)
 ax.set_title('Signal', fontsize=16)
 ax.set_xticks([])
