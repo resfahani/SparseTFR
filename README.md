@@ -13,7 +13,7 @@ The bottom subplot is the reisudal between observed and reconstructed data.<br /
 
 Take a look at the result of second example ([link](https://github.com/resfahani/SparseSTFT/blob/master/Figures/Demo1.png))
 
-#Citation
+# Citation
 
 D. D. Esfahani, Reza & Askari, Radwin & Gholami, Ali. (2018). Sparsity promoting method to estimate the dispersion curve of surface wave group velocity. GEOPHYSICS. 84. 1-40. 10.1190/geo2018-0138.1. 
 
