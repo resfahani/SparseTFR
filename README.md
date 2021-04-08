@@ -5,7 +5,7 @@ The algorithm is based on the constant window function and optimization in the t
 
 # Example 
 The figure shows the result of **Demo2.py** code.<br />
-The top subplot shows the ground motion recorded by Kik-Net stations in Japan. <br />
+The top subplot shows the ground motion recorded by Kik-Net stations at Japan. <br />
 The middle subplot is the **TF Representation** of seismogram.<br />
 The bottom subplot is the reisudal between observed and reconstructed data.<br />
 
