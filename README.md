@@ -12,7 +12,8 @@ The bottom subplot is the reisudal between observed and reconstructed data.<br /
 ![alt text](https://github.com/resfahani/SparseSTFT/blob/master/Figures/Demo2.png)
 
 <br />
-**Take a look at second example ([link](https://github.com/resfahani/SparseSTFT/blob/master/Figures/Demo1.png))**
+
+** Take a look at second example ([link](https://github.com/resfahani/SparseSTFT/blob/master/Figures/Demo1.png)) **
 
 # Citation
 
