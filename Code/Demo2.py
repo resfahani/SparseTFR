@@ -28,16 +28,16 @@ from numpy.fft import (fft, ifft)
 import obspy as op
 
 #gamma: The weight of L2 norm
-gamma = 2
+gamma = 1
 
 #cgIter: number of CG iteration
 cgIter = 1
 
 #epsilon: Nonnegative scallar of noise level (N* sigma^2)
-epsilon = 1e-2
+epsilon = 1e-3
 
 #Window length
-nw = 60
+nw = 70
 
 
 
@@ -75,28 +75,31 @@ yrec  = np.real(np.sum(W * ifft(f, axis=0) , keepdims=True, axis=1))
 
 #%%
 
-fig, (ax,ax1,ax2) = plt.subplots(3,1,figsize=(8,10))
+fig, (ax,ax1,ax2) = plt.subplots(3,1,figsize=(8,8))
 t = np.arange(n) * dt
 
 
 fmin = 0
 fnyq = 1/dt/2
 nyqn = n//2
-ax.plot(t, y)
+ax.plot(t, y,'k', lw = 1)
 ax.set_title('Signal', fontsize= 16)
 ax.set_xticks([])
 #ax.set_xlabel('Time (s)',fontsize= 16)
+ax.set_xlim(t[0], t[-1])
 
-ax1.imshow(abs(f[nyqn+1:,:]), aspect= 'auto', extent= [t[0], t[-1],fmin, fnyq])
+
+ax1.imshow(abs(f[nyqn+1:,:]), aspect= 'auto', extent= [t[0], t[-1],fmin, fnyq],cmap='hot_r')
 ax1.set_title('Sparse TF representation',fontsize= 16)
 #ax1.set_xlabel('Time (s)',fontsize= 16)
 ax1.set_ylabel('Frequency (Hz)',fontsize= 16)
 ax1.set_xticks([])
 
 
-ax2.plot(y-yrec)
-ax2.set_title('reconstruction error',fontsize= 16)
+ax2.plot(t, y-yrec,'k', lw = 1)
+ax2.set_title('Residual',fontsize= 16)
 ax2.set_xlabel('Time (s)',fontsize= 16)
+ax2.set_xlim(t[0], t[-1])
 
 fig.savefig("Demo2.png", dpi=100)
 

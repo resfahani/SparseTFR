@@ -68,17 +68,19 @@ t = np.arange(n)
 
 fmin = 0
 nyqn = n//2
-ax.plot(t, y)
+ax.plot(t, y,'k', lw = 1)
 ax.set_title('Signal', fontsize=16)
 ax.set_xticks([])
+ax.set_xlim(0, n)
 
-ax1.imshow(abs(f[nyqn+1:,:]), aspect= 'auto', extent= [t[0], t[-1],fmin, nyqn])
+ax1.imshow(abs(f[nyqn+1:,:]), aspect= 'auto', extent= [t[0], t[-1],fmin, nyqn], cmap='hot_r')
 ax1.set_title('Sparse TF representation', fontsize=16)
 ax1.set_ylabel('Frequency sample', fontsize=16)
 ax1.set_xticks([])
 
-ax2.plot(y-yrec)
-ax2.set_title('reconstruction error', fontsize=16)
+ax2.plot(y-yrec,'k', lw = 1)
+ax2.set_title('Residual', fontsize=16)
 ax2.set_xlabel('Time', fontsize=16)
+ax2.set_xlim(0, n)
 
 fig.savefig("Demo1.png", dpi=100)
