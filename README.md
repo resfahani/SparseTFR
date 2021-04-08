@@ -4,10 +4,10 @@ Sparse Short Time Fourier Transform (SparseSTFT)
 The algorithm is based on the constant window function and optimization in the time-domain with two examples.
 
 # Example 
-The figure shows the result of **Demo2.py** code.<\br>
-The top subplot shows the ground motion recorded by Kik-Net stations in Japan. <\br>
-The middle subplot is the **TF Representation** of seismogram.<\br>
-The bottom subplot is the reisudal between observed and reconstructed data.<\br>
+The figure shows the result of **Demo2.py** code.<br />
+The top subplot shows the ground motion recorded by Kik-Net stations in Japan. <br />
+The middle subplot is the **TF Representation** of seismogram.<br />
+The bottom subplot is the reisudal between observed and reconstructed data.<br />
 
 ![alt text](https://github.com/resfahani/SparseSTFT/blob/master/Figures/Demo2.png)
 
