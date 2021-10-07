@@ -6,7 +6,7 @@ The algorithm is based on the constant window function and optimization in the t
 # Example 
 The figure shows the result of **Demo2.py** code.<br />
 The top subplot shows the ground motion recorded by Kik-Net stations at Japan. <br />
-The middle subplot is the **TF Representation** of seismogram.<br />
+The middle subplot is the ** Sparse TF Representation** of seismogram.<br />
 The bottom subplot is the reisudal between observed and reconstructed data.<br />
 
 ![alt text](https://github.com/resfahani/SparseSTFT/blob/master/Figures/Demo2.png)
@@ -14,6 +14,7 @@ The bottom subplot is the reisudal between observed and reconstructed data.<br /
 <br />
 
 **Take a look at second example ([link](https://github.com/resfahani/SparseSTFT/blob/master/Figures/Demo1.png))**
+
 
 # Citation
 
